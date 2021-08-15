@@ -1,5 +1,14 @@
 # Changelog
 
+## \[1.0.0-beta.4]
+
+- Change the WiX config to allow upgrading installation with same version instead of duplicating the application.
+  - [dd5e1ede](https://www.github.com/tauri-apps/tauri/commit/dd5e1ede32ab8c10849fe6583d93ef493dd6f184) fix(bundler): `AllowSameVersionUpgrades` on WiX, closes [#2211](https://www.github.com/tauri-apps/tauri/pull/2211) ([#2428](https://www.github.com/tauri-apps/tauri/pull/2428)) on 2021-08-14
+- Check target architecture at runtime running `$ RUSTC_BOOTSTRAP=1 rustc -Z unstable-options --print target-spec-json` and parsing the `llvm-target` field, fixing macOS M1 sidecar check until we can compile the CLI with M1 target on GitHub Actions.
+  - [5ebf389f](https://www.github.com/tauri-apps/tauri/commit/5ebf389f6c6805ccd2b15d81fe12416770e39222) feat(bundler): check target arch at runtime, closes [#2286](https://www.github.com/tauri-apps/tauri/pull/2286) ([#2422](https://www.github.com/tauri-apps/tauri/pull/2422)) on 2021-08-13
+- Only convert package name and binary name to kebab-case, keeping the `.desktop` `Name` field with the original configured value.
+  - [3f039cb8](https://www.github.com/tauri-apps/tauri/commit/3f039cb8a308b0f18deaa37d7cfb1cc50d308d0e) fix: keep original `productName` for .desktop `Name` field, closes [#2295](https://www.github.com/tauri-apps/tauri/pull/2295) ([#2384](https://www.github.com/tauri-apps/tauri/pull/2384)) on 2021-08-10
+
 ## \[1.0.0-beta.3]
 
 - Fix WIX uninstaller by using unique `GUID` shortcut.

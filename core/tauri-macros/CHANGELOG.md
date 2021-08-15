@@ -1,5 +1,12 @@
 # Changelog
 
+## \[1.0.0-beta.5]
+
+- Fix ES Module detection for default imports with relative paths or scoped packages and exporting of async functions.
+  - Bumped due to a bump in tauri-codegen.
+  - [b2b36cfe](https://www.github.com/tauri-apps/tauri/commit/b2b36cfe8dfcccb341638a4cb6dc23a514c54148) fix(core): fixes ES Module detection for default imports with relative paths or scoped packages ([#2380](https://www.github.com/tauri-apps/tauri/pull/2380)) on 2021-08-10
+  - [fbf8caf5](https://www.github.com/tauri-apps/tauri/commit/fbf8caf5c419cb4fc3d123be910e094a8e8c4bef) fix(core): ESM detection when using `export async function` ([#2425](https://www.github.com/tauri-apps/tauri/pull/2425)) on 2021-08-14
+
 ## \[1.0.0-beta.4]
 
 - `Params` has been removed, along with all the associated types on it. Functions that previously accepted those
